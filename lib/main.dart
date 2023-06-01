@@ -46,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
    var names = ['Android','App','Camera','DCIM','Files','Gallery','HiddenFiles','Images','JPEG','Kingdom','Lambda',
                   'Manage','NewFolder','Optimize','Private','Query','Reserved','Storage','Utilized','Virtual'
                   ,'Web','Xamp','YML','Zip'];
-   List<String> images = ['asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png',
-     'asset/91636.jpg','asset/444005.jpg','asset/783506.jpg','asset/783572.jpg','asset/881587.png','asset/91636.jpg','asset/444005.jpg','asset/783506.jpg','asset/783572.jpg','asset/881587.png'];
+   List<String> images = ['asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png',
+                       'asset/eren.png', 'asset/eren.png','asset/eren.png','asset/eren.png','asset/eren.png',];
     return Scaffold(
       appBar: AppBar(
         title: Text("Hel"),
