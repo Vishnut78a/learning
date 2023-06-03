@@ -7,6 +7,7 @@ class Login extends StatefulWidget{
 
 class _LoginState extends State<Login> {
   String name="";
+  bool change = false;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,9 +34,20 @@ class _LoginState extends State<Login> {
           ),
         ),
       SizedBox(height: 20,),
-       Container(height: 43,width:100 ,
-         child: Center(child: Text('Login',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),
-         decoration:BoxDecoration(borderRadius: BorderRadius.circular(24),color: Colors.lightBlue,) ,),
+       Material( borderRadius: BorderRadius.circular(24),color: Colors.lightBlue,
+         child: InkWell(onTap: () async {setState(() {
+           change=true;});
+           await Future.delayed(Duration(milliseconds:1000));
+          await Navigator.pushNamed(context, "/home");
+          setState(() {
+            change=false;
+          });
+           },
+           child: AnimatedContainer(duration:Duration(milliseconds: 1000),height: 43,width:change?43:100,
+                          child: change?Icon(Icons.done,color: Colors.white,):Center(child: Text('Login',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)),
+            ),
+         ),
+       ),
       ],
     ),
  ));
