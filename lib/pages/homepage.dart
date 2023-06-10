@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:learning/models/catalog.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../widgets/drawer.dart';
 
@@ -40,21 +41,36 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Catalog App", style: TextStyle(color: Colors.black87),),
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: (Catalog.items.isNotEmpty)?GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,crossAxisSpacing: 10,mainAxisSpacing: 10),
-          itemBuilder: (BuildContext context, int index) {
-            return Card(
-              child: GridTile(header: SizedBox(height: 100,width: 12,child: Text("gdf"),),child: Image.network(Catalog.items[index].imageurl,height: 1,width: 1,),),
-            );
-          },itemCount: Catalog.items.length,):Center(child: CircularProgressIndicator(),),
-      ),
-      drawer: MyDrawer(),
-    );
-  }
+
+      body: SafeArea(
+             child: Container(padding: Vx.m16 ,
+                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: ["Catalog App".text.xl4.bold.make(),
+                                         "Trendigng Apps".text.xl.make(),
+                                          if(Catalog.items.isNotEmpty)
+
+                                              Expanded(
+                                                child: ListView.builder(itemCount: Catalog.items.length,
+                                                                itemBuilder:(context,index){
+                                                     return VxBox(child: Row(
+                                                                         children: [Image.network(Catalog.items[index].imageurl,).box.rounded.p16.color(Vx.yellow100).
+                                                                                                                                 make().p16().w40(context),
+                                                                                   Expanded(child:Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                         children: [Catalog.items[index].name.text.bold.make(),
+                                                                                                                     Catalog.items[index].descprition.text.textStyle(context.captionStyle).make(),
+                                                                                                                   ButtonBar(children: ["\$${Catalog.items[index].price}".text.bold.xl.make(),
+                                                                                                                     ElevatedButton(onPressed: (){}, child: "Buy".text.make())],
+                                                                                                                                  ),
+                                                                                                                ],))],))
+                                                            .square(150).rounded.white
+                                                            .make().py12();
+                                                   }),
+                                              )
+
+                                            else Center(child: CircularProgressIndicator(),)]))
+
+    ));
+     }
 
 }
+

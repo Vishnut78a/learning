@@ -1,14 +1,7 @@
 {
 
     "product" :  [
-      {
-        "id" : 1,
-         "name":"iPhone X",
-        "descprition": "Apple iPhone 10th generation" ,
-         "price" :500 ,
-         "color":  "33505a",
-         "imageurl":"https://m.media-amazon.com/images/I/61IM1qjdoEL._AC_UF894,1000_QL80_.jpg"
-      },
+
       {
         "id" : 2,
         "name": "iPhone 12 ",
@@ -32,15 +25,8 @@
         "price" : 400,
         "color": "33505a" ,
         "imageurl":"https://m.media-amazon.com/images/I/41x6M8sd69L._SX300_SY300_QL70_FMwebp_.jpg"
-      },
-      {
-        "id" : 5,
-        "name":"OnePlus 6T ",
-        "descprition":"OnePlus 6th generation" ,
-        "price" :450 ,
-        "color": "33505a",
-        "imageurl":"https://m.media-amazon.com/images/I/41fBRgy0ipL._SX300_SY300_QL70_FMwebp_.jpg"
       }
+
     ]
 
 }
