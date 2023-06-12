@@ -8,7 +8,7 @@
         "descprition": "Apple iPhone 12th generation",
         "price" : 899,
         "color": "33505a" ,
-        "imageurl":"https://m.media-amazon.com/images/I/71hIfcIPyxS._SX679_.jpg"
+        "imageurl":"https://media.mobex.in/media/catalog/product/2/3/234256_11_a121xw.png?auto=webp&format=png&width=640&height=800&fit=cover"
       },
       {
         "id" : 3,
@@ -16,7 +16,7 @@
         "descprition": "Pixel 4th generation",
         "price" :480 ,
         "color": "33505a" ,
-        "imageurl":"https://m.media-amazon.com/images/I/7199N-Uz2AL._SX679_.jpg"
+        "imageurl":"https://cometcase.in/wp-content/uploads/2022/04/Google-Pixel-4A-Skins-Wraps-Covers-1.webp"
       },
       {
         "id" :4 ,
@@ -24,7 +24,41 @@
         "descprition":"Pixel 6th generation" ,
         "price" : 400,
         "color": "33505a" ,
-        "imageurl":"https://m.media-amazon.com/images/I/41x6M8sd69L._SX300_SY300_QL70_FMwebp_.jpg"
+        "imageurl":"https://cdn.shopify.com/s/files/1/0326/4364/5484/products/Google-Pixel-6-Pro-sunny.png?v=1664558822&width=1445"
+      }
+
+    ,
+      {
+        "id" : 5,
+        "name":"One Plus 10T",
+        "descprition": "One Plus 10th generation",
+        "price" :600 ,
+        "color": "33505a" ,
+        "imageurl":"https://oasis.opstatics.com/content/dam/oasis/page/2022/operation/july/ovaltine/10T-Green-L.png"
+      },
+      {
+        "id" : 6,
+        "name":"One Plus 11R",
+        "descprition": "One Plus 11th generation",
+        "price" :620 ,
+        "color": "33505a" ,
+        "imageurl":"https://oasis.opstatics.com/content/dam/oasis/page/2023/in/oneplus-10t/specs/10r-blue.png"
+      }
+    ,
+      {
+        "id" : 7,
+        "name":"Play Station 5",
+        "descprition": "Play Station 5th generation",
+        "price" :800 ,
+        "color": "33505a" ,
+        "imageurl":"https://cdn.shopify.com/s/files/1/1684/4603/products/PlayStation-5-Digital-Edition_600x.png?v=1629957320"
+      },{
+        "id" : 8,
+        "name":"Play Station 4",
+        "descprition": "Play Station 4th generation",
+        "price" :580 ,
+        "color": "33505a" ,
+        "imageurl":"https://specials-images.forbesimg.com/imageserve/5e054fc425ab5d0007cf52ca/Sony-PS4-Pro-sale--PS4-Pro-deal--Best-PS4-deal--PS4-Slim-deal--Best-PS4-deal-/960x0.png?fit=scale"
       }
 
     ]

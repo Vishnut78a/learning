@@ -16,6 +16,7 @@ class Homepage extends StatefulWidget{
 }
 
 class _HomepageState extends State<Homepage> {
+  Color darkbluish = Color(0xff403b58);
   @override
   void initState() {
     loaddata();
@@ -43,8 +44,8 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed:(){Navigator.push(context,MaterialPageRoute(builder:(context)=>Cart()));},child: Icon(CupertinoIcons.cart),),
+    return Scaffold(backgroundColor: context.canvasColor,
+      floatingActionButton: FloatingActionButton(backgroundColor: context.theme.floatingActionButtonTheme.backgroundColor,onPressed:(){Navigator.push(context,MaterialPageRoute(builder:(context)=>Cart()));},child: Icon(CupertinoIcons.cart,),),
       body: SafeArea(
              child: Container(padding: Vx.m16 ,
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +63,7 @@ class _HomepageState extends State<Homepage> {
                                                                 child: VxBox(child: Row(
                                                                                     children: [Hero(
                                                                                       tag: Key(Catalog.items[index].imageurl),
-                                                                                      child: Image.network(Catalog.items[index].imageurl,).box.rounded.p16.color(Vx.yellow100).
+                                                                                      child: Image.network(Catalog.items[index].imageurl,).box.customRounded(BorderRadius.circular(10)).p16.color(context.canvasColor).
                                                                                                                                      make().p16().w40(context),
                                                                                     ),
                                                                                                 Expanded(child:Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
@@ -72,14 +73,14 @@ class _HomepageState extends State<Homepage> {
                                                                                                                       ButtonBar(alignment:MainAxisAlignment.spaceBetween,children: ["\$${Catalog.items[index].price}".text.bold.xl.make(),
                                                                                                                        Column(
                                                                                                                          children: [
-                                                                                                                           ElevatedButton(onPressed: (){},style: ButtonStyle(shape:MaterialStatePropertyAll(StadiumBorder()),backgroundColor: MaterialStatePropertyAll(Colors.deepPurpleAccent)), child: "Add To Cart".text.make(),)
+                                                                                                                           ElevatedButton(onPressed: (){},style: ButtonStyle(shape:MaterialStatePropertyAll(StadiumBorder()),backgroundColor: MaterialStatePropertyAll(context.theme.floatingActionButtonTheme.backgroundColor)), child: "Add To Cart".text.make(),)
 
 
                                                                                                                            ],
                                                                                                                        )],
                                                                                                                                     ),
-                                                                                                                  ],))],))
-                                                              .square(150).rounded.white
+                                                                                                                  ],))],)).color(context.cardColor)
+                                                              .square(150).rounded
                                                               .make().py12(),
                                                      );
                                                    }),
