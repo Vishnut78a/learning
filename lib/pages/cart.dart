@@ -1,16 +1,24 @@
 
 
+
+
 import 'package:flutter/material.dart';
 import 'package:learning/pages/homepagedetail.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../models/catalog.dart';
+
 class Cart extends StatelessWidget{
+Cart(List<Catalog> list){
+  this.list=list;
+}
+List<Catalog> list=[];
   @override
   Widget build(BuildContext context) {
 
  return Scaffold(body: SafeArea(child:Column(
                                     children: ["Cart".text.bold.xl4.make().centered(),
-                                      Cartlist().p32().expand(),
+                                      Cartlist(list).p32().expand(),
 
                                     _CartTotal()]
 
@@ -34,18 +42,30 @@ class _CartTotal extends StatelessWidget {
 }
 
 class  Cartlist extends StatefulWidget{
-  @override
-  State<Cartlist> createState() => _CartlistState();
+
+  Cartlist(List<Catalog> list){
+   this.list=list;
+ }
+ List<Catalog> list=[];
+   @override
+  State<Cartlist> createState() => _CartlistState(list);
 }
 
 class _CartlistState extends State<Cartlist> {
+  _CartlistState(List<Catalog> list){
+    this.list=list;
+  }
+  List<Catalog> list=[];
   @override
   Widget build(BuildContext context) {
 
-    return ListView.builder(itemCount:26,itemBuilder: (context,index) {
+    return ListView.builder(itemCount:list.length,itemBuilder: (context,index) {
        return ListTile(leading : Icon(Icons.done),
-                       title: "Item1".text.make(),
-                       trailing: IconButton(icon: Icon(Icons.remove_circle_outline,), onPressed: () {  },),);
+                       title: list[index].name.text.make(),
+                       trailing: IconButton(icon: Icon(Icons.remove_circle_outline,),  onPressed: () {  list[index].tapped=false;
+                                                                                                       list.removeAt(index);
+                                                                                                       setState(() {
+                       }); },),);
     });
 
   }

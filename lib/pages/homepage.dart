@@ -17,6 +17,8 @@ class Homepage extends StatefulWidget{
 
 class _HomepageState extends State<Homepage> {
   Color darkbluish = Color(0xff403b58);
+  List<Catalog> list = [];
+
   @override
   void initState() {
     loaddata();
@@ -45,7 +47,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
 
     return Scaffold(backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton(backgroundColor: context.theme.floatingActionButtonTheme.backgroundColor,onPressed:(){Navigator.push(context,MaterialPageRoute(builder:(context)=>Cart()));},child: Icon(CupertinoIcons.cart,),),
+      floatingActionButton: FloatingActionButton(backgroundColor: context.theme.floatingActionButtonTheme.backgroundColor,onPressed:(){Navigator.push(context,MaterialPageRoute(builder:(context)=>Cart(list)));},child: Icon(CupertinoIcons.cart,),),
       body: SafeArea(
              child: Container(padding: Vx.m16 ,
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +75,15 @@ class _HomepageState extends State<Homepage> {
                                                                                                                       ButtonBar(alignment:MainAxisAlignment.spaceBetween,children: ["\$${Catalog.items[index].price}".text.bold.xl.make(),
                                                                                                                        Column(
                                                                                                                          children: [
-                                                                                                                           ElevatedButton(onPressed: (){},style: ButtonStyle(shape:MaterialStatePropertyAll(StadiumBorder()),backgroundColor: MaterialStatePropertyAll(context.theme.floatingActionButtonTheme.backgroundColor)), child: "Add To Cart".text.make(),)
+                                                                                                                           ElevatedButton(onPressed: (){
+                                                                                                                               if(Catalog.items[index].tapped){
+                                                                                                                                 list.remove(Catalog.items[index]);
+                                                                                                                                 Catalog.items[index].tapped = false;
+                                                                                                                               }else{
+                                                                                                                                 list.add(Catalog.items[index]);
+                                                                                                                                 Catalog.items[index].tapped = true;
+                                                                                                                               }
+                                                                                                                           },style: ButtonStyle(shape:MaterialStatePropertyAll(StadiumBorder()),backgroundColor: MaterialStatePropertyAll(context.theme.floatingActionButtonTheme.backgroundColor)), child:"Add To Cart".text.make(),)
 
 
                                                                                                                            ],

@@ -9,7 +9,7 @@ class Catalog  {
   num price ;
   String color ;
   String imageurl ;
-
+  bool tapped = false;
 
   Catalog({required this.id, required this.name, required this.descprition, required this.price, required this.color,
       required this.imageurl});
