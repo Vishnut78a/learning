@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:learning/pages/homepage.dart';
 import 'package:learning/pages/login.dart';
+import 'package:learning/pages/provider11.dart';
+import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:video_player/video_player.dart';
 
 
 void main() {
+  Provider.debugCheckInvalidValueType = null;
 runApp(MyApp());
 }
 

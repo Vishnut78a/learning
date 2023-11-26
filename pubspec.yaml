@@ -39,6 +39,10 @@ dependencies:
 
   google_fonts: ^4.0.0
   velocity_x: ^3.3.0
+  provider:
+  get:
+  firebase_database:
+
 
 dev_dependencies:
   flutter_test:
